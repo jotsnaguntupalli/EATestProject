@@ -14,5 +14,5 @@ Scenario Outline: Login to EA page
 Examples:
  | Username | Password |
  | djotsna@outlook   | sairam   |
- | gnk@hotmail  | Aditi    |
+ 
  

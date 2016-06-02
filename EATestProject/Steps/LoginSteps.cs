@@ -14,14 +14,33 @@ namespace EATestProject.Steps
     [Binding]
     public class LoginSteps
     {
-        [Given(@"I have navigated to the EA application")]
+        LoginPage loginPage = new LoginPage();
+
+        
         public void IHaveNavigatedToEAApplication()
         {
             Driver.driver = new FirefoxDriver();
             Driver.driver.Navigate().GoToUrl(ConfigurationManager.AppSettings["seleniumBaseUrl"]);
             Driver.driver.Manage().Window.Maximize();
         }
-        [When((@""))]
+
+        [Given(@" I filled the <Username> and <Password> fields")]
+        public void IFilledUsernamePasswordFields(string userName, string passWord)
+        {
+            loginPage.Login(userName, passWord);
+        }
+
+        [When(@"I press login button")]
+        public void IPressLoginButton()
+        {
+            loginPage.ClickLogin();
+        }
+
+        [Then(@"I should see the EA homepage")]
+        public void IShouldSeeEAHomepage()
+        {
+           
+        }
 
     }
 }

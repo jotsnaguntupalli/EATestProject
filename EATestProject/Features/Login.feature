@@ -1,11 +1,10 @@
-﻿Feature: Login
+﻿Feature: Login Feature
 	In order to login to the EA homepage
 	As a registered user
 	I want to login to my account
 
-@Test
-@Browser:Firefox
-Scenario Outline: Login to EA page
+@RegressionTest
+Scenario Outline: Verify if the Login functionality is working(+ve case)
 	Given I have navigated to the EA application
 	And   I filled the <Username> and <Password> fields.
 	When  I press login button
@@ -13,6 +12,8 @@ Scenario Outline: Login to EA page
 
 Examples:
  | Username | Password |
- | djotsna@outlook   | sairam   |
+ | jotsna   | sairam   |
+ | karthik  | Aditi    |
+
  
  

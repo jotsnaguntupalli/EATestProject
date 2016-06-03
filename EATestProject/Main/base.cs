@@ -16,26 +16,30 @@ namespace EATestProject.Main
 
         public static BasePage currentPage
         {
-            get {return _currentpage;}
+            get
+            {
+                return _currentpage;
+            }
             set
             {
                 ScenarioContext.Current["class"] = value;
                 _currentpage = ScenarioContext.Current.Get<BasePage>("class");
             }
         }
-
         public TPage As<TPage>() where TPage : BasePage
         {
             return (TPage) this;
         }
-        //protected TPage GetInstance<TPage>() where TPage : BasePage, new()
-        //{
-        //    TPage pageInstance = new TPage
-        //    {
-        //        _driver = Driver.driver
-        //    };
-        //    return pageInstance;
-        //}
+
+        public TPage GetInstance<TPage>() where TPage : BasePage, new()
+        {
+            TPage pageInstance = new TPage
+            {
+                _driver = Driver.driver
+            };
+            return pageInstance;
+        }
+
     }
 
 }

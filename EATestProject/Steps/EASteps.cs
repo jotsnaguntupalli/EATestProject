@@ -29,19 +29,21 @@ namespace EATestProject.Steps
         [Then(@"I should see EA page")]
         public void IShouldSeeEAPage()
         {
-           //((EAPage)Basepage.CurrentPage).IsLoggedIn();
+
+           //((EAPage)Base.CurrentPage).IsLoggedIn();
         }
         [Then(@"I enter data into all the fields in EA page and click save")]
         public void IEnterDataIntoAllFieldsAndSave(Table table)
         {
             dynamic values = table.CreateDynamicInstance();
-            ((EAPage) Basepage.CurrentPage).FillDetails(values.initial, values.firstName, values.middleName);
+            //((EAPage)Base.CurrentPage).FillDetails(values.initial, values.firstName, values.middleName);
         }
         [Then(@"I should be able to see all the saved details")]
         public void IShouldSeeSavedDetails(Table table)
         {
             dynamic values = table.CreateDynamicInstance();
-            ((EAPage)Basepage.CurrentPage).GetFilleddetails(values.initial, values.firstName, values.middleName);
+            //((EAPage)Base.CurrentPage).GetFilleddetails(values.initial, values.firstName, values.middleName);
+            
         } 
     }
 }

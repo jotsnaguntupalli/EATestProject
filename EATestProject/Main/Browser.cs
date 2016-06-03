@@ -18,7 +18,7 @@ namespace EATestProject.Main
     };
     public class Browser
     {
-        private IWebDriver _driver;
+        private readonly IWebDriver _driver;
 
         public Browser(IWebDriver driver)
         {

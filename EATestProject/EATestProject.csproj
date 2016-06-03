@@ -93,6 +93,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Main\Base.cs" />
     <Compile Include="Main\Basepage.cs" />
     <Compile Include="Main\Browser.cs" />

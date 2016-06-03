@@ -14,7 +14,7 @@ namespace EATestProject.Steps
     [Binding]
     public class EASteps
     {
-        LoginPage loginPage = new LoginPage();
+       
         [Given(@"I filled the <Username> and <Password> fields")]
         public void IFilledUsernamePasswordFields(Table table)
         {

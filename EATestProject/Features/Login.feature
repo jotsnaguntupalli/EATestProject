@@ -9,7 +9,6 @@ Scenario Outline: Verify if the Login functionality is working(+ve case)
 	And   I filled the <Username> and <Password> fields.
 	When  I press login button
 	Then  I should see the EA homepage
-
 Examples:
  | Username | Password |
  | jotsna   | sairam   |

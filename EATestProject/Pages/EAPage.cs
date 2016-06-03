@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,11 +30,42 @@ namespace EATestProject.Pages
         [FindsBy(How = How.Name, Using = "Save")]
         public IWebElement btnSave { get; set; }
 
-        public void FillDetails(string firstName, string middleName)
+        public void IsLoggedIn()
         {
-            SelectElement element = new SelectElement(ddlTitle);
-           
+            Driver.driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
+            if(btnSave.Displayed == true)
+                Console.WriteLine("User details are saved");
+            Console.ReadLine();
+            else
+            {
+                Console.WriteLine("User cannot save the details");
+                Console.ReadLine();
+                throw new NoSuchElementException();
+            }
         }
+        public void FillDetails(string initial,string firstName, string middleName)
+        {
+            txtInitial.SendKeys(initial);
+            txtFirstName.SendKeys(firstName);
+            txtMiddleName.SendKeys(middleName);
+            btnSave.Click();
+        }
+
+        public void GetFilleddetails(string initial, string firstName, string middleName)
+        {
+            if (txtInitial.GetAttribute("value") == initial && txtFirstName.GetAttribute("value") == firstName &&
+                txtMiddleName.GetAttribute("value") == middleName)
+            {
+                Console.WriteLine("passed");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Failed");
+                Console.ReadLine();
+            }
+        }
+
 
 
 

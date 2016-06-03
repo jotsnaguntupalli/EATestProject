@@ -9,7 +9,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace EATestProject
 {
-   public class LoginPage : Base
+    public class LoginPage : Base
     {
         //PageObjects
         [FindsBy(How = How.Name, Using = "UserName")]
@@ -19,16 +19,31 @@ namespace EATestProject
         [FindsBy(How = How.Name, Using = "Login")]
         public IWebElement btnLogin { get; set; }
 
-       public void Login(string userName, string passWord)
-       {
-          username.SendKeys(userName);
-          password.SendKeys(passWord);
-       }
+        public void Login(string userName, string passWord)
+        {
+            username.SendKeys(userName);
+            password.SendKeys(passWord);
+        }
 
-       public EAPage ClickLogin()
-       {
+        public EAPage ClickLogin()
+        {
             btnLogin.Submit();
+
+           if (btnLogin.Displayed == true)
+            {
+                
+                Console.WriteLine("User Logged in");
+                Console.ReadLine();
+             }
+
+            else
+            {
+                Console.WriteLine("User login failed");
+                Console.ReadLine();
+                throw new NoSuchElementException();
+            }
             return new EAPage();
+
         }
 
 

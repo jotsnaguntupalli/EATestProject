@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EATestProject.Main;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 
 namespace EATestProject.Pages
 {
-    public class EAPage : Base
+    public class EAPage : BasePage
     {
         //PageObjects
         [FindsBy(How = How.Id, Using = "TitleId")]
@@ -33,14 +34,16 @@ namespace EATestProject.Pages
         public void IsLoggedIn()
         {
             Driver.driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(5));
-            if(btnSave.Displayed == true)
+            if (btnSave.Displayed == true)
+            {
                 Console.WriteLine("User details are saved");
-            Console.ReadLine();
+                Console.ReadLine();
+            }
             else
             {
                 Console.WriteLine("User cannot save the details");
                 Console.ReadLine();
-                throw new NoSuchElementException();
+                throw new Exception("User not logged in ");
             }
         }
         public void FillDetails(string initial,string firstName, string middleName)

@@ -93,8 +93,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Base\PageInitialization.cs" />
-    <Compile Include="Base\Driver.cs" />
+    <Compile Include="Main\Base.cs" />
+    <Compile Include="Main\Basepage.cs" />
+    <Compile Include="Main\Driver.cs" />
     <Compile Include="Features\EA.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

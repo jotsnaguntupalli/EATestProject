@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EATestProject.Main;
 using EATestProject.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace EATestProject
 {
-    public class LoginPage : Base
+    public class LoginPage : BasePage
     {
         //PageObjects
         [FindsBy(How = How.Name, Using = "UserName")]

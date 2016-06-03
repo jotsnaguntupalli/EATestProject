@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 
-namespace EATestProject
+namespace EATestProject.Main
 {
     public static class Driver
     {

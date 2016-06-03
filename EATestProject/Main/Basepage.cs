@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace EATestProject
+namespace EATestProject.Main
 {
-    public abstract class Base
+    public class BasePage : Base
     {
-        public Base()
+        public BasePage()
         {
             PageFactory.InitElements(Driver.driver, this);
         }

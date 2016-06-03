@@ -35,7 +35,7 @@ namespace EATestProject.Steps
         public void IEnterDataIntoAllFieldsAndSave(Table table)
         {
             dynamic values = table.CreateDynamicInstance();
-            Base.currentPage.As<EAPage>().FillDetails(values.initial, values.firstName, values.middleName);
+           Base.currentPage.As<EAPage>().FillDetails(values.initial, values.firstName, values.middleName);
         }
         [Then(@"I should be able to see all the saved details")]
         public void IShouldSeeSavedDetails(Table table)

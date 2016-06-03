@@ -10,5 +10,6 @@ namespace EATestProject.Main
     public static class Driver
     {
         public static IWebDriver driver { get; set; }
+        public static Browser browser { get; set; }
     }
 }

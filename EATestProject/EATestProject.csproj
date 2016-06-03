@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Main\Base.cs" />
     <Compile Include="Main\Basepage.cs" />
+    <Compile Include="Main\Browser.cs" />
     <Compile Include="Main\Driver.cs" />
     <Compile Include="Features\EA.feature.cs">
       <AutoGen>True</AutoGen>

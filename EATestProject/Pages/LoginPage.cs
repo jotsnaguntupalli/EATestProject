@@ -15,8 +15,10 @@ namespace EATestProject
         //PageObjects
         [FindsBy(How = How.Name, Using = "UserName")]
         public IWebElement username { get; set; }
+
         [FindsBy(How = How.Name, Using = "Password")]
         public IWebElement password { get; set; }
+
         [FindsBy(How = How.Name, Using = "Login")]
         public IWebElement btnLogin { get; set; }
 

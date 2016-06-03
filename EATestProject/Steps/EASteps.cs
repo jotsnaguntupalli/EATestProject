@@ -19,30 +19,29 @@ namespace EATestProject.Steps
         public void IFilledUsernamePasswordFields(Table table)
         {
             dynamic values = table.CreateDynamicInstance();
-            loginPage.Login(values.userName, values.passWord);
+            Base.currentPage.As<LoginPage>().Login(values.userName, values.passWord);
         }
         [When(@" I click Login button")]
         public void IClickLoginButton()
         {
-            loginPage.ClickLogin();
+            Base.currentPage = Base.currentPage.As<LoginPage>().ClickLogin();
         }
         [Then(@"I should see EA page")]
         public void IShouldSeeEAPage()
         {
-
-           //((EAPage)Base.CurrentPage).IsLoggedIn();
+            Base.currentPage.As<EAPage>().IsLoggedIn();
         }
         [Then(@"I enter data into all the fields in EA page and click save")]
         public void IEnterDataIntoAllFieldsAndSave(Table table)
         {
             dynamic values = table.CreateDynamicInstance();
-            //((EAPage)Base.CurrentPage).FillDetails(values.initial, values.firstName, values.middleName);
+            Base.currentPage.As<EAPage>().FillDetails(values.initial, values.firstName, values.middleName);
         }
         [Then(@"I should be able to see all the saved details")]
         public void IShouldSeeSavedDetails(Table table)
         {
             dynamic values = table.CreateDynamicInstance();
-            //((EAPage)Base.CurrentPage).GetFilleddetails(values.initial, values.firstName, values.middleName);
+            Base.currentPage.As<EAPage>().GetFilleddetails(values.initial, values.firstName, values.middleName);
             
         } 
     }

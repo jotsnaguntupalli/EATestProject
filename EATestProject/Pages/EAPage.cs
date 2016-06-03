@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EATestProject.Pages
 {
-    public class EAPage
+    public class EAPage : Base
     {
     }
 }

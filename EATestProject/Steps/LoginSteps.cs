@@ -15,7 +15,6 @@ namespace EATestProject.Steps
     public class LoginSteps
     {
         LoginPage loginPage = new LoginPage();
-
         
         public void IHaveNavigatedToEAApplication()
         {

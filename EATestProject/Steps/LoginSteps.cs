@@ -35,6 +35,8 @@ namespace EATestProject.Steps
         public void IPressLoginButtonAndSeeHomepage()
         {
             Base.currentPage.As<LoginPage>().ClickLogin();
+            LogHelper.CreateFile();
+            LogHelper.WriteToFile("User is logged in!!!!");
         }
 
     

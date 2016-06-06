@@ -11,15 +11,14 @@ namespace EATestProject
 {
     public class LogHelper
     {
-        //Create filename
+        //Create logfilename
         private static string _logFileName = string.Format("{0}:yyyymmddhhmmss", DateTime.Now);
-
         private static StreamWriter _streamLogWriter = null;
-
-        // Create a file 
-        public static void CreateFile()
+        
+        //Create File   
+        public static void CreateLogFile()
         {
-            var dir = @"c:\SeleniumLibrary";
+            string dir = @"c:\SeleniumLibrary";
             if (Directory.Exists(dir))
             {
                 _streamLogWriter = File.AppendText(dir + _logFileName + ".log");
@@ -28,16 +27,15 @@ namespace EATestProject
             {
                 Directory.CreateDirectory(dir);
                 _streamLogWriter = File.AppendText(dir + _logFileName + ".log");
+
             }
         }
-       // write to file
-        public static void WriteToFile(string logmessage)
+        //Write to logfile
+        public static void Write(string logMessage)
         {
             _streamLogWriter.Write("{0} {1}", DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString());
-            _streamLogWriter.Write(" {0}", logmessage);
+            _streamLogWriter.Write("        {0}", logMessage);
             _streamLogWriter.Flush();
-           
         }
-
-    }
-}
+      }
+ }
